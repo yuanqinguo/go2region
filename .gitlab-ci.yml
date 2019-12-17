@@ -1,0 +1,29 @@
+before_script:
+  - export
+  - export VERSION=`echo ${CI_COMMIT_TAG} | awk -F"_" '{print $2}'`
+
+# stages
+stages:
+  - build
+  - deploy
+# jobs
+build-tags:
+  stage: build
+  script:
+    ## 执行makefile文件
+    - make ENV="test" VERSION=${VERSION}
+    - if [ ! -d "/data/code/tmonitor/tags/${VERSION}" ]; then
+      mkdir -p "/data/code/tmonitor/tags/${VERSION}/";
+      fi
+    - mv -f tmonitor.tar.gz /data/code/tmonitor/tags/${VERSION}/
+  tags:
+    - golang-tmonitor
+  only:
+    - tags
+deploy-tags:
+  stage: deploy
+  script:
+    - cd /data/code/tmonitor/tags/
+    - echo "add ${CI_COMMIT_TAG}"
+  only:
+    - tags
