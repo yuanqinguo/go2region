@@ -50,7 +50,7 @@ make  # 得到执行文件go2region
 使用consul后台启动：
 ./bin/go2region -consul http://127.0.0.1:8500 -d=true
 使用配置文件后台启动：
-./bin/go2region -c go2region.yml
+./bin/go2region -c go2region.yml -d=true
 
 启动过程中需要加载源数据，加载时长根据纯真IP库导出来的数据量决定，虚拟机测试需要20分钟左右加载53W左右的IP端记录。
 ```
