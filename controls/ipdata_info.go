@@ -5,10 +5,11 @@ import (
 	"fmt"
 	"github.com/xujiajun/nutsdb"
 	"github.com/xujiajun/nutsdb/ds/zset"
-	"goip2region/utils"
-	"goip2region/utils/helper"
-	"goip2region/utils/logs"
+	"go2region/utils"
+	"go2region/utils/helper"
+	"go2region/utils/logs"
 	"io"
+	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
@@ -49,8 +50,21 @@ func (ipdb *IpDataInfo) loaderFromFile() (*nutsdb.DB, error) {
 	}
 	defer f.Close()
 
+	dbpath := "/tmp/nutsdb/go2region"
+	files, _ := ioutil.ReadDir(dbpath)
+	for _, f := range files {
+		name := f.Name()
+		if name != "" {
+			fmt.Println(dbpath + "/" + name)
+			err := os.RemoveAll(dbpath + "/" + name)
+			if err != nil {
+				fmt.Println(err)
+			}
+		}
+	}
+
 	opt := nutsdb.DefaultOptions
-	opt.Dir = "/tmp/nutsdb/goip2region" //这边数据库会自动创建这个目录文件
+	opt.Dir = dbpath //这边数据库会自动创建这个目录文件
 	opt.EntryIdxMode = nutsdb.HintKeyAndRAMIdxMode
 	db, err := nutsdb.Open(opt)
 	if err != nil {

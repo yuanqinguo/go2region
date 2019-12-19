@@ -6,14 +6,14 @@ import (
 	"fmt"
 	consulapi "github.com/hashicorp/consul/api"
 	"github.com/sirupsen/logrus"
-	"goip2region/utils/logs"
+	"go2region/utils/logs"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"os"
 	"time"
 )
 
-const SERVER_NAME = "goip2region"
+const SERVER_NAME = "go2region"
 
 var CONFIG_KEY = fmt.Sprintf("/configs/eebo.ehr.%s/system", SERVER_NAME)
 

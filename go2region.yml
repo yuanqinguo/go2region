@@ -1,0 +1,11 @@
+log_level: "info"
+
+base:
+  # 当前服务监听端口
+  server_port: 8080
+  # 当前服务的access日志，error日志，日志等级和日志保留时长
+  access_log_path: runtime/logs/access-%Y-%m-%d.log
+  error_log_path: runtime/logs/error-%Y-%m-%d.log
+  log_max_age: 15
+  ipdata_path: runtime/ipdata.txt
+#######################################################################

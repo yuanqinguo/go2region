@@ -1,6 +1,6 @@
 export VERSION=1.0.0
 export ENV=prod
-export PROJECT=goip2region
+export PROJECT=go2region
 
 TOPDIR=$(shell pwd)
 SOURCE_BINARY_DIR=$(TOPDIR)/bin

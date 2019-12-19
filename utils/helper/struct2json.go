@@ -2,7 +2,7 @@ package helper
 
 import (
 	"encoding/json"
-	"goip2region/utils/logs"
+	"go2region/utils/logs"
 )
 
 func Struct2Json(st interface{}) (str string, err error) {

@@ -2,8 +2,8 @@ package controls
 
 import (
 	"github.com/kataras/iris/v12"
-	. "goip2region/config"
-	"goip2region/utils"
+	. "go2region/config"
+	"go2region/utils"
 )
 
 func Reloader(ctx iris.Context) {

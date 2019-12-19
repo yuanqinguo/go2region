@@ -3,7 +3,7 @@ package routes
 import (
 	"github.com/iris-contrib/middleware/cors"
 	"github.com/kataras/iris/v12"
-	"goip2region/controls"
+	"go2region/controls"
 )
 
 // 定义500错误处理函数
@@ -33,7 +33,7 @@ func InnerRoute(app *iris.Application) {
 	app.OnErrorCode(iris.StatusInternalServerError, err500)
 	app.OnErrorCode(iris.StatusNotFound, err404)
 
-	root := app.Party("/goip2region")
+	root := app.Party("/go2region")
 	root.Get("/ping", func(ctx iris.Context) { _, _ = ctx.WriteString("pong") })
 	root.Get("/ipinfo", controls.GetIpInfo)
 	root.Post("/reload", controls.Reloader)

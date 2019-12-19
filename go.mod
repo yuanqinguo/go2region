@@ -1,4 +1,4 @@
-module goip2region
+module go2region
 
 go 1.13.5
 

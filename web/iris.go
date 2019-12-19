@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/kataras/iris/v12"
-	"goip2region/routes"
+	"go2region/routes"
 )
 
 func RunIris(port int) {

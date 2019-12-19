@@ -6,10 +6,10 @@ import (
 	_ "github.com/icattlecoder/godaemon" //包的init函数实现，启动时加入 -d=true表示为daemon运行
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/sirupsen/logrus"
-	. "goip2region/config"
-	"goip2region/controls"
-	"goip2region/utils/logs"
-	"goip2region/web"
+	. "go2region/config"
+	"go2region/controls"
+	"go2region/utils/logs"
+	"go2region/web"
 	"os"
 	"time"
 )

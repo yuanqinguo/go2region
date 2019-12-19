@@ -2,8 +2,8 @@ package controls
 
 import (
 	"github.com/kataras/iris/v12"
-	"goip2region/utils"
-	"goip2region/utils/helper"
+	"go2region/utils"
+	"go2region/utils/helper"
 )
 
 type IpInfoResp struct {

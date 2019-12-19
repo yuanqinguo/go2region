@@ -3,8 +3,8 @@ package controls
 import (
 	"fmt"
 	"github.com/kataras/iris/v12"
-	"goip2region/utils"
-	"goip2region/utils/logs"
+	"go2region/utils"
+	"go2region/utils/logs"
 )
 
 type Resp struct {
