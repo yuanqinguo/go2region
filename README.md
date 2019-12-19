@@ -47,6 +47,12 @@
 
 make  # 得到执行文件go2region
 ./bin/go2region # -c {配置文件} -consul consul服务地址   -c和-consul二选一  -d=true表deamon方式运行，需要前台运行请不要携带-d参数
+使用consul后台启动：
+./bin/go2region -consul http://127.0.0.1:8500 -d=true
+使用配置文件后台启动：
+./bin/go2region -c go2region.yml
+
+启动过程中需要加载源数据，加载时长根据纯真IP库导出来的数据量决定，虚拟机测试需要20分钟左右加载53W左右的IP端记录。
 ```
 
 
